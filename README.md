@@ -51,6 +51,8 @@ Query strings do not change the selected file.
 
 The HTML has inline styles and no client JavaScript or external assets. Publish it only after
 the human approves the public host and destination. Do not commit previews or `.env`.
+Keep the review issue open and the marker present until the reviewer explicitly confirms they
+have looked. Sending the link is an intermediate step, not confirmation that review is complete.
 
 After review and separate replacement approval, remove `LANE_MARKER` from `.env` and from the
 server's environment, restart rig, and run the same export command. Confirm the banner says
