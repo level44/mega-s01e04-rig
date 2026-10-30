@@ -7,3 +7,6 @@
 - Times: keep the offset from the log; never convert to UTC for display.
 - Tests: vitest, next to nothing. Test through `app.request()` for routes.
 - Small commits, one issue each, `closes #n` in the message.
+- Digest pages (`/digest/:night`) use the reader's canonical job order and original timestamp
+  offsets. Missing nights return 404; empty nights say "nothing ran". Mark retries of 3 or more
+  and failed last statuses with `.warn`, and report skipped bad lines when present.
