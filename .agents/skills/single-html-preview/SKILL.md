@@ -70,6 +70,8 @@ cannot retract downloaded copies. Never delete or change another project's servi
 
 ## Evidence boundary
 
-This routine's initial S01E04 checks exercised publication, rendering, exact/query URL routing,
-private-path rejection, and local same-URL file replacement. Record takedown and public marker
-replacement separately when actually exercised; do not infer them from these checks.
+S01E04 exercised publication, rendering, exact/query URL routing and private-path rejection.
+After separate human approval, the public marker-free replacement retained the exact URL and
+all sample data. `omp ps stop` made that URL return 502; restarting the same loopback port
+restored 200 without changing the tunnel URL. These are observed checks, not guarantees that
+the processes, authentication or approvals remain valid in another session.

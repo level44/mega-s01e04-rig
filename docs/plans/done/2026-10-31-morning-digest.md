@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-10-31
 ---
 
 # Morning digest
@@ -70,7 +71,8 @@ self-contained, ADR 0001). Put it on your own public host, one where you can upl
 or static host, ADR 0003), so it opens from a public HTTPS link. Send the reviewer the link and the
 issues for this plan.
 
-Done when: the preview link is sent to the reviewer.
+Done when: the preview link is sent and the reviewer explicitly confirms they have looked.
+Sending the link alone is an intermediate step; keep the review issue open until confirmation.
 
 ## 4. Clean up
 
@@ -79,3 +81,20 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| [1](https://github.com/level44/mega-s01e04-rig/issues/1) | Read nightly run logs | — | omp · openai-codex/gpt-6.1-sol · effort not exposed | 2026-10-31 |
+| [2](https://github.com/level44/mega-s01e04-rig/issues/2) | Render digest page | #1 shared types | omp · openai-codex/gpt-6.1-sol · effort not exposed | 2026-10-31 |
+| [3](https://github.com/level44/mega-s01e04-rig/issues/3) | Serve digest JSON | #1 shared types; #2 for comparison | omp · openai-codex/gpt-6.1-sol · effort not exposed | 2026-10-31 |
+| [4](https://github.com/level44/mega-s01e04-rig/issues/4) | Link nights from status board | #1 shared types; #2 for verification | omp · openai-codex/gpt-6.1-sol · effort not exposed | 2026-10-31 |
+| [5](https://github.com/level44/mega-s01e04-rig/issues/5) | Test digest routes | #1 shared types; #2, #3 for execution | omp · openai-codex/gpt-6.1-sol · effort not exposed | 2026-10-31 |
+| [6](https://github.com/level44/mega-s01e04-rig/issues/6) | Publish review preview | #1–#5, publication approval, reviewer confirmation | omp · openai-codex/gpt-6.1-sol · effort not exposed | 2026-10-31 |
+| [7](https://github.com/level44/mega-s01e04-rig/issues/7) | Remove preview marker and archive plan | #6, replacement approval | omp · openai-codex/gpt-6.1-sol · effort not exposed | 2026-10-31 |
+
+The reviewer confirmed they had seen the preview before marker cleanup. After separate human
+approval, the same public preview URL was replaced with a render saying "no marker set"; its
+sample data was unchanged. The HTML and private environment were never committed.
+
