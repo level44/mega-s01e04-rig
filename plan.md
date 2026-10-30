@@ -43,6 +43,8 @@ Done when: `/digest/2026-10-28` renders locally.
 
 `GET /api/digest/:night` returns the same rows as JSON. Agents read this one; the page and the
 JSON must never disagree (ADR 0001).
+The response is the reader's complete `NightDigest`, with its canonical job order; missing or
+invalid nights return 404.
 
 Done when: the JSON for 2026-10-28 has the same jobs, in the same order, as the page.
 
