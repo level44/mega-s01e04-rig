@@ -28,7 +28,8 @@ await readFile(file); // Fail before opening the listener if the export cannot b
 
 const server = createServer(async (request, response) => {
   response.setHeader('Cache-Control', 'no-store');
-  if (request.url !== '/digest.html') {
+  const pathname = request.url?.split('?', 1)[0];
+  if (pathname !== '/digest.html') {
     response.writeHead(404).end('Not found');
     return;
   }
