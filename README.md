@@ -38,6 +38,16 @@ curl --fail --silent --show-error \
   --output ../preview/digest.html http://127.0.0.1:8787/digest/2026-10-28
 ```
 
+Serve just this exported file on loopback for a tunnel:
+
+```sh
+node scripts/preview-server.mjs --file ../preview/digest.html --port 8788
+```
+
+The miniserver exposes only `http://127.0.0.1:8788/digest.html` for GET/HEAD. It rereads the
+file on each request and disables caching, so replacing the export updates the same URL.
+Other paths return 404 and other methods return 405. `--help` prints its options.
+
 The HTML has inline styles and no client JavaScript or external assets. Publish it only after
 the human approves the public host and destination. Do not commit previews or `.env`.
 
