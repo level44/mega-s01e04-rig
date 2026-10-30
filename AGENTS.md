@@ -30,6 +30,19 @@ Read first: `docs/vision.md`, `docs/styleguide.md`. Decisions: `docs/adr/`.
 5. An issue is closed only when its "Done when" holds. If it can't hold yet, leave it open and
    say what it waits on.
 
+## Human-approved issue shape
+
+For the morning-digest plan, the human approved every issue carrying:
+
+- First line: `Source: plan.md § <section>` (including subsection names such as `2a`).
+- Label: `plan:morning-digest`.
+- Body sections: `Scope`, `Done when`, and `Blocked by`, with real issue references.
+
+This records the human's decision; ask again if another plan needs a different shape. Keep an
+external-review issue open until the reviewer explicitly confirms they have looked. Sending a
+link is not that confirmation, and cleanup waits for it plus the required human approval.
+
+
 ## Skills
 
 Shared skills live in `.agents/skills/`, one folder each, `SKILL.md` inside. That folder is the
